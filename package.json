@@ -1,0 +1,60 @@
+{
+  "name": "vanilla-extract-infusion",
+  "version": "0.0.2",
+  "description": "A conditional wrapper for Vanilla Extract recipes",
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    "./package-json": "./package.json",
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "module": "./dist/esm/index.js",
+      "default": "./dist/cjs/index.js"
+    },
+    "./createRuntimeFn": {
+      "types": "./dist/types/createRuntimeFn.d.ts",
+      "module": "./dist/esm/createRuntimeFn.js",
+      "default": "./dist/cjs/createRuntimeFn.js"
+    }
+  },
+  "files": [
+    "/LICENSE",
+    "/README.md",
+    "/dist",
+    "/package.json"
+  ],
+  "scripts": {
+    "build": "npm run build:clean && npm run build:dist",
+    "build:clean": "rm -rf ./dist",
+    "build:dist": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennisJamin/vanilla-infusion.git"
+  },
+  "keywords": [
+    "vanilla-extract",
+    "vanilla-extract-css",
+    "responsive",
+    "conditional"
+  ],
+  "author": "Dennis Jamin",
+  "license": "MIT",
+  "peerDependencies": {
+    "@vanilla-extract/css": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vanilla-extract/css": "^1.14.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "bugs": {
+    "url": "https://github.com/DennisJamin/vanilla-infusion/issues"
+  },
+  "homepage": "https://github.com/DennisJamin/vanilla-infusion#readme",
+  "dependencies": {
+    "check-ends-with-period": "^3.0.2"
+  }
+}
